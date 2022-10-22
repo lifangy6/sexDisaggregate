@@ -12,3 +12,5 @@ LazyData: true
 RoxygenNote: 7.2.1
 Imports: 
     mclust (>= 5.3.0)
+Roxygen: list(markdown = TRUE)
+Depends: R (>= 3.1.0)
