@@ -14,11 +14,14 @@ knitr::opts_chunk$set(
 ```
 
 # sexDisaggregate
+To Obtain and Analyze Sex-disaggregated Datasets
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of sexDisaggregate is to ...
+## Description
+`sexDisaggregate` is is an R package that separates .csv datasets by sex, performs comparison visualization and helps users to examine their datasets from a sex-disaggregated perspective.
+
 
 ## Installation
 
@@ -29,6 +32,29 @@ require("devtools")
 install_github("lifangy6/sexDisaggregate", build_vignettes = TRUE)
 library("sexDisaggregate")
 ```
+To run the shinyApp: Under construction
+
+
+## Overview
+
+Only One Image Here
+
+
+## Contributions
+
+The author of the package is Fangyi Li....
+
+
+## References
+
+Reference goes here...
+R Core Team (2022). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. https://www.R-project.org/.
+  
+
+## Acknowledgements
+
+This package was developed as part of an assessment for 2019-2022 BCB410H: Applied Bioinformatics course at the University of Toronto, Toronto, CANADA. `sexDisaggregate` welcomes issues, enhancement requests, and other contributions. To submit an issue, use the [GitHub issues](https://github.com/lifangy6/sexDisaggregate/issues). Many thanks to those who provided feedback to improve this package.
+
 
 ## Example
 
