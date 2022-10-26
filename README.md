@@ -10,8 +10,8 @@ To Obtain and Analyze Sex-disaggregated Datasets
 
 ## Description
 
-`sexDisaggregate` is is an R package that separates .csv datasets by
-sex, performs comparison visualization and helps users to examine their
+`sexDisaggregate` is an R package that separates .csv datasets by sex,
+performs comparison visualization and helps users to examine their
 datasets from a sex-disaggregated perspective.
 
 ## Installation
@@ -36,9 +36,9 @@ The author of the package is Fangyi Li….
 
 ## References
 
-Reference goes here… R Core Team (2022). R: A language and environment
-for statistical computing. R Foundation for Statistical Computing,
-Vienna, Austria. <https://www.R-project.org/>.
+Reference goes here… <br> R Core Team (2022). R: A language and
+environment for statistical computing. R Foundation for Statistical
+Computing, Vienna, Austria. <https://www.R-project.org/>.
 
 ## Acknowledgements
 
