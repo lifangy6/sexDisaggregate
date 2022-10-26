@@ -35,3 +35,6 @@ hello <- function() {
 
 # To add Suggests, example:
 #usethis::use_package("RTCGA.rnaseq", type = "Suggests")
+
+
+# Tests go into [test -> testthat] directory, not just test

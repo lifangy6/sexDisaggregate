@@ -14,3 +14,9 @@ Imports:
     mclust (>= 5.3.0)
 Roxygen: list(markdown = TRUE)
 Depends: R (>= 3.1.0)
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+VignetteBuilder: knitr

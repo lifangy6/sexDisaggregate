@@ -1,0 +1,29 @@
+---
+title: "Introduction_sexDisaggregate"
+author: "Fangyi Li"
+date: "`r format(Sys.time(), '%d %b %Y')`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction_sexDisaggregate}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(sexDisaggregate)
+```
+
+## Introduction
+
+## Details
+
+## Applications
+
+## References
