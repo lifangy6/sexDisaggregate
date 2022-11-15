@@ -67,7 +67,7 @@ To run the shinyApp: Under construction
     CITATION
     |- extdata
       |- example_barplot.png
-      |- example_densityplot.fasta
+      |- example_densityplot.png
   |- man
     |- separateCSV.Rd
     |- visualizeDiff.Rd
@@ -123,8 +123,7 @@ The author of the package is Fangyi Li. <br> Packages `ggplot2` and
 ## References
 
 -   Claus O. Wilke (2017). cowplot: Streamlined Plot Theme and Plot
-    Annotations for ‘ggplot2’. URL
-    <https://github.com/wilkelab/cowplot>.
+    Annotations for ‘ggplot2’. <https://github.com/wilkelab/cowplot>.
 
 -   Heinemann, A., Martinez, V. M., & Alas, C. R. (n.d.). Why we need
     more sex-disaggregated Social Protection Data and what we’re doing

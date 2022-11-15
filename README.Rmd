@@ -70,7 +70,7 @@ To run the shinyApp: Under construction
     CITATION
     |- extdata
       |- example_barplot.png
-      |- example_densityplot.fasta
+      |- example_densityplot.png
   |- man
     |- separateCSV.Rd
     |- visualizeDiff.Rd
@@ -124,7 +124,7 @@ Packages `ggplot2` and `cowplot` are used to help visualizing and outputing data
 
 ## References
 * Claus O. Wilke (2017). cowplot: Streamlined Plot Theme and Plot Annotations 
-for 'ggplot2'. URL 	https://github.com/wilkelab/cowplot.
+for 'ggplot2'. https://github.com/wilkelab/cowplot.
 
 * Heinemann, A., Martinez, V. M., &amp; Alas, C. R. (n.d.). Why we need more 
 sex-disaggregated Social Protection Data and what we're doing to get there. 
