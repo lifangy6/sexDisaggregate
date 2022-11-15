@@ -45,14 +45,16 @@ To run the shinyApp: Under construction
 ## Examples
 
 There is an example dataset `example_data.csv` under `/data` directory.
-<br> Example 1. Separate example dataset
+
+-   Example 1: Separate example dataset Run example code:
 
 ``` r
 separateCSV(filepath = "data/example_data.csv", fpName = "my_data", sexTag = "Sex", femaleTag = "F", maleTag = "M")
 ```
 
-Produced datasets can be found under `/data` directory. <br> Example 2.
-Bar plot approach
+Produced datasets can be found under `/data` directory.
+
+-   Example 2: Bar plot approach Run example code:
 
 ``` r
 visualizeDiff(filepath = "data/example_data.csv", sexTag = "Sex", yTag = "Asthma", femaleTag = "F", maleTag = "M", visMethod = "bar")
@@ -61,7 +63,8 @@ visualizeDiff(filepath = "data/example_data.csv", sexTag = "Sex", yTag = "Asthma
 <div style="text-align:center">
 
 <img src="inst/extdata/example_barplot.png" alt="ShinyLinePlot" width="750" height="550"/>
-<br> Example 3. Density plot approach
+
+-   Example 3: Density plot approach Run example code:
 
 ``` r
 visualizeDiff(filepath = "data/example_data.csv", sexTag = "Sex", yTag = "Sodium Intake (mg)", femaleTag = "F", maleTag = "M", visMethod = "density")
