@@ -47,7 +47,7 @@ functions available in the package:
 
 ``` r
 ls("package:sexDisaggregate")
-browseVignettes("mixGaussian")
+browseVignettes("sexDisaggregate")
 ```
 
 To run the shinyApp: Under construction
@@ -88,7 +88,7 @@ To run the shinyApp: Under construction
 
 There is an example dataset `example_data.csv` under `/data` directory.
 
-**Example 1: Separate example dataset** <br> Run example code:
+**Example 1: Separate example dataset** <br> To run example code:
 
 ``` r
 separateCSV(filepath = "data/example_data.csv", fpName = "my_data", sexTag = "Sex", femaleTag = "F", maleTag = "M")
@@ -96,7 +96,7 @@ separateCSV(filepath = "data/example_data.csv", fpName = "my_data", sexTag = "Se
 
 Produced datasets can be found under `/data` directory.
 
-**Example 2: Bar plot approach** <br> Run example code:
+**Example 2: Bar plot approach** <br> To run example code:
 
 ``` r
 visualizeDiff(filepath = "data/example_data.csv", sexTag = "Sex", yTag = "Asthma", femaleTag = "F", maleTag = "M", visMethod = "bar")
@@ -104,9 +104,9 @@ visualizeDiff(filepath = "data/example_data.csv", sexTag = "Sex", yTag = "Asthma
 
 <div style="text-align:center">
 
-<img src="inst/extdata/example_barplot.png" alt="ShinyLinePlot" width="750" height="750"/>
+<img src="inst/extdata/example_barplot.png" alt="ShinyLinePlot" width="750" height="650"/>
 
-**Example 3: Density plot approach** <br> Run example code:
+**Example 3: Density plot approach** <br> To run example code:
 
 ``` r
 visualizeDiff(filepath = "data/example_data.csv", sexTag = "Sex", yTag = "Sodium Intake (mg)", femaleTag = "F", maleTag = "M", visMethod = "density")
@@ -114,7 +114,7 @@ visualizeDiff(filepath = "data/example_data.csv", sexTag = "Sex", yTag = "Sodium
 
 <div style="text-align:center">
 
-<img src="inst/extdata/example_densityplot.png" alt="ShinyLinePlot" width="750" height="750"/>
+<img src="inst/extdata/example_densityplot.png" alt="ShinyLinePlot" width="750" height="650"/>
 
 ## Contributions
 
