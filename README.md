@@ -10,7 +10,7 @@ To Obtain and Analyze Sex-disaggregated Datasets
 
 ## Description
 
-`sexDisaggregate` is an R package that separates .csv datasets by sex,
+`sexDisaggregate` is an R package that separates CSV datasets by sex,
 performs comparison visualization and helps users to examine their
 datasets from a sex-disaggregated perspective.
 
@@ -24,50 +24,79 @@ install_github("lifangy6/sexDisaggregate", build_vignettes = TRUE)
 library("sexDisaggregate")
 ```
 
-To run the shinyApp: Under construction
-
 ## Overview
 
-Only One Image Here
+`sexDisaggregate` contains 2 functions:
+
+Function `separateCSV` separates provided CSV file into 3 new datasets:
+cleaned version, female-only and male-only.
+
+Function `visualizeDiff` visualize 4 graphs that show sex percentage and
+sex vs. specific category in the dataset.
+
+To list all functions available in the package:
+
+``` r
+ls("package:sexDisaggregate")
+```
+
+To run the shinyApp: Under construction
+
+## Examples
+
+There is an example dataset `example_data.csv` under `/data` directory.
+<br> Example 1. Separate example dataset
+
+``` r
+separateCSV(filepath = "data/example_data.csv", fpName = "my_data", sexTag = "Sex", femaleTag = "F", maleTag = "M")
+```
+
+Produced datasets can be found under `/data` directory. <br> Example 2.
+Bar plot approach
+
+``` r
+visualizeDiff(filepath = "data/example_data.csv", sexTag = "Sex", yTag = "Asthma", femaleTag = "F", maleTag = "M", visMethod = "bar")
+```
+
+<div style="text-align:center">
+
+<img src="inst/extdata/example_barplot.png" alt="ShinyLinePlot" width="750" height="550"/>
+<br> Example 3. Density plot approach
+
+``` r
+visualizeDiff(filepath = "data/example_data.csv", sexTag = "Sex", yTag = "Sodium Intake (mg)", femaleTag = "F", maleTag = "M", visMethod = "density")
+```
+
+<div style="text-align:center">
+
+<img src="inst/extdata/example_densityplot.png" alt="ShinyLinePlot" width="750" height="550"/>
 
 ## Contributions
 
-The author of the package is Fangyi Li….
+The author of the package is Fangyi Li.
 
 ## References
 
-Reference goes here… <br> R Core Team (2022). R: A language and
-environment for statistical computing. R Foundation for Statistical
-Computing, Vienna, Austria. <https://www.R-project.org/>.
+-   Claus O. Wilke (2017). cowplot: Streamlined Plot Theme and Plot
+    Annotations for ‘ggplot2’. URL
+    <https://github.com/wilkelab/cowplot>. <br>
+-   Heinemann, A., Martinez, V. M., & Alas, C. R. (n.d.). Why we need
+    more sex-disaggregated Social Protection Data and what we’re doing
+    to get there. World Bank Blogs. Retrieved November 14, 2022, from
+    <https://blogs.worldbank.org/opendata/why-we-need-more-sex-disaggregated-social-protection-data-and-what-were-doing-get-there>
+    <br>
+-   R Core Team (2022). R: A language and environment for statistical
+    computing. R Foundation for Statistical Computing, Vienna, Austria.
+    <https://www.R-project.org/>. <br>
+-   Wickham H (2016). ggplot2: Elegant Graphics for Data Analysis.
+    Springer-Verlag New York. ISBN 978-3-319-24277-4,
+    <https://ggplot2.tidyverse.org>.
 
 ## Acknowledgements
 
-This package was developed as part of an assessment for 2019-2022
-BCB410H: Applied Bioinformatics course at the University of Toronto,
-Toronto, CANADA. `sexDisaggregate` welcomes issues, enhancement
-requests, and other contributions. To submit an issue, use the [GitHub
+This package was developed as part of an assessment for 2022 BCB410H:
+Applied Bioinformatics course at the University of Toronto, Toronto,
+CANADA. `sexDisaggregate` welcomes issues, enhancement requests, and
+other contributions. To submit an issue, use the [GitHub
 issues](https://github.com/lifangy6/sexDisaggregate/issues). Many thanks
 to those who provided feedback to improve this package.
-
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-``` r
-library(sexDisaggregate)
-## basic example code
-```
-
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/v1/examples>.
-
-You can also embed plots, for example:
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
