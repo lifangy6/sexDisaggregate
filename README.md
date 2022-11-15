@@ -6,7 +6,17 @@
 To Obtain and Analyze Sex-disaggregated Datasets
 
 <!-- badges: start -->
-<!-- badges: end -->
+<!-- https://www.codefactor.io/repository/github/anjalisilva/testingpackage/issues -->
+
+[![CodeFactor](https://www.codefactor.io/repository/github/lifangy6/sexDisaggregate/badge)](https://www.codefactor.io/repository/github/lifangy6/sexDisaggregate)
+[![GitHub
+issues](https://img.shields.io/github/issues/lifangy6/sexDisaggregate)](https://github.com/lifangy6/sexDisaggregate/issues)
+[![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
+![GitHub language
+count](https://img.shields.io/github/languages/count/lifangy6/sexDisaggregate)
+![GitHub commit activity
+(branch)](https://img.shields.io/github/commit-activity/y/lifangy6/sexDisaggregate/master)
+<!-- https://shields.io/category/license --> <!-- badges: end -->
 
 ## Description
 
@@ -37,9 +47,42 @@ functions available in the package:
 
 ``` r
 ls("package:sexDisaggregate")
+browseVignettes("mixGaussian")
 ```
 
 To run the shinyApp: Under construction
+
+## Tree Structure
+
+``` r
+- sexDisaggregate
+  |- sexDisaggregate.Rproj
+  |- DESCRIPTION
+  |- NAMESPACE
+  |- LICENSE
+  |- README
+  |- data
+    |- asthma_dataset.csv
+    |- example_data.csv
+  |- inst
+    CITATION
+    |- extdata
+      |- example_barplot.png
+      |- example_densityplot.fasta
+  |- man
+    |- separateCSV.Rd
+    |- visualizeDiff.Rd
+  |- R
+    |- separateCSV.R
+    |- visualizeDiff.R
+  |- vignettes
+    |- Introduction_sexDisaggregate.Rmd
+  |- tests
+    |- testthat.R
+    |- testthat
+      |- test-separateCSV.R
+      |- test-visualizeDiff.R
+```
 
 ## Examples
 
@@ -75,24 +118,35 @@ visualizeDiff(filepath = "data/example_data.csv", sexTag = "Sex", yTag = "Sodium
 
 ## Contributions
 
-The author of the package is Fangyi Li.
+The author of the package is Fangyi Li. <br> Packages `ggplot2` and
+`cowplot` are used to help visualizing and outputing data.
 
 ## References
 
 -   Claus O. Wilke (2017). cowplot: Streamlined Plot Theme and Plot
     Annotations for ‘ggplot2’. URL
-    <https://github.com/wilkelab/cowplot>. <br>
+    <https://github.com/wilkelab/cowplot>.
+
 -   Heinemann, A., Martinez, V. M., & Alas, C. R. (n.d.). Why we need
     more sex-disaggregated Social Protection Data and what we’re doing
     to get there. World Bank Blogs. Retrieved November 14, 2022, from
     <https://blogs.worldbank.org/opendata/why-we-need-more-sex-disaggregated-social-protection-data-and-what-were-doing-get-there>
-    <br>
+
 -   R Core Team (2022). R: A language and environment for statistical
     computing. R Foundation for Statistical Computing, Vienna, Austria.
-    <https://www.R-project.org/>. <br>
+    <https://www.R-project.org/>.
+
+-   Wickham, H. and Bryan, J. (2019). R Packages (2nd edition). Newton,
+    Massachusetts: O’Reilly Media. <https://r-pkgs.org/>
+
 -   Wickham H (2016). ggplot2: Elegant Graphics for Data Analysis.
     Springer-Verlag New York. ISBN 978-3-319-24277-4,
     <https://ggplot2.tidyverse.org>.
+
+-   Silva, Anjali. “Anjalisilva/TestingPackage: A Simple R Package
+    Illustrating Components of an R Package: 2019-2022 BCB410H - Applied
+    Bioinformatics, University of Toronto, Canada.” GitHub,
+    <https://github.com/anjalisilva/TestingPackage>.
 
 ## Acknowledgements
 
