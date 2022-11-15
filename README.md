@@ -6,7 +6,7 @@
 To Obtain and Analyze Sex-disaggregated Datasets
 
 <!-- badges: start -->
-<!-- https://www.codefactor.io/repository/github/anjalisilva/testingpackage/issues -->
+<!-- https://www.codefactor.io/repository/github/lifangy6/sexDisaggregate/issues -->
 
 [![CodeFactor](https://www.codefactor.io/repository/github/lifangy6/sexDisaggregate/badge)](https://www.codefactor.io/repository/github/lifangy6/sexDisaggregate)
 [![GitHub
