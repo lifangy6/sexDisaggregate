@@ -1,6 +1,8 @@
 #' Separating CSV Dataset Into Three Groups
 #'
-#' brief
+#' Check each entry of the dataset, clean unformated sex entry to standardized
+#' "Female"/"Male"/"NA", and output 3 cleanned versions of datasets into data/
+#' directory.
 #'
 #' @param filepath A character string of the filepath to find your dataset.
 #' @param fpName A character string of CSV dataset's name. Recommand use

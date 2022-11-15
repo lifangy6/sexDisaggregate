@@ -27,7 +27,9 @@ Returns three versions of cleaned datasets under /data directory:
 (3) Male-only dataset
 }
 \description{
-brief
+Check each entry of the dataset, clean unformated sex entry to standardized
+"Female"/"Male"/"NA", and output 3 cleanned versions of datasets into data/
+directory.
 }
 \examples{
 sexDisaggregate::separateCSV(filepath = "data/example_data.csv",

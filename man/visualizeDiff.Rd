@@ -34,7 +34,8 @@ Returns a combined figure of
 (D) Overall Distribution by Sex
 }
 \description{
-brief
+Examine the sex percentage of the dataset in pie charts. Examine sex vs.
+specific category in the dataset in either bar plot or density plot.
 }
 \examples{
 # Example 1: Target category is not a continuous and numeric value.

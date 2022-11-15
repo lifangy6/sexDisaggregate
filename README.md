@@ -40,14 +40,15 @@ ls("package:sexDisaggregate")
 browseVignettes("sexDisaggregate")
 ```
 
-<br> `sexDisaggregate` contains 2 functions:
+`sexDisaggregate` contains 2 functions:
 
 Function `separateCSV` separates provided CSV file into 3 new datasets:
 cleaned version, female-only and male-only.
 
 Function `visualizeDiff` visualize 4 graphs that show sex percentage and
-sex vs. specific category in the dataset. <br> <br> To run the shinyApp:
-Under construction
+sex vs. specific category in the dataset.
+
+<br> To run the shinyApp: Under construction
 
 ## Tree Structure
 
@@ -115,8 +116,8 @@ visualizeDiff(filepath = "data/example_data.csv", sexTag = "Sex", yTag = "Sodium
 
 ## Contributions
 
-The author of the package is Fangyi Li. <br> Packages `ggplot2` and
-`cowplot` are used to help visualizing and outputing data.
+The author of the package is Fangyi Li. Packages `ggplot2` and `cowplot`
+are used to help visualizing and outputing data.
 
 ## References
 

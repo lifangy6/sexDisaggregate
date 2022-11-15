@@ -1,6 +1,7 @@
 #' Visualizing Sex vs. Target Category
 #'
-#' brief
+#' Examine the sex percentage of the dataset in pie charts. Examine sex vs.
+#' specific category in the dataset in either bar plot or density plot.
 #'
 #' @param filepath A character string of the filepath to find your dataset.
 #' @param fpName A character string of CSV dataset's name. Recommand use
