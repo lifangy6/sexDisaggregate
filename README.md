@@ -35,21 +35,19 @@ library("sexDisaggregate")
 
 ## Overview
 
-`sexDisaggregate` contains 2 functions:
-
-Function `separateCSV` separates provided CSV file into 3 new datasets:
-cleaned version, female-only and male-only.
-
-Function `visualizeDiff` visualize 4 graphs that show sex percentage and
-sex vs. specific category in the dataset. <br> <br> To list all
-functions available in the package:
-
 ``` r
 ls("package:sexDisaggregate")
 browseVignettes("sexDisaggregate")
 ```
 
-To run the shinyApp: Under construction
+<br> `sexDisaggregate` contains 2 functions:
+
+Function `separateCSV` separates provided CSV file into 3 new datasets:
+cleaned version, female-only and male-only.
+
+Function `visualizeDiff` visualize 4 graphs that show sex percentage and
+sex vs. specific category in the dataset. <br> <br> To run the shinyApp:
+Under construction
 
 ## Tree Structure
 
