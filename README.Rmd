@@ -129,7 +129,7 @@ dataList
 
 **Step 2.1: Bar plot approach**
 ``` r
-plots1 <- visualizeDiff(dataList = dataList, yTag = "Sodium Intake (mg)", visMethod = "density")
+plots1 <- visualizeDiff(dataList = dataList, yTag = "Asthma", visMethod = "bar")
 plots1
 ```
 <div style="text-align:center"><img src="inst/extdata/example_barplot.png" alt="ShinyLinePlot" width="750" height="650"/>
