@@ -3,16 +3,9 @@
 #' Examine the sex percentage of the dataset in pie charts. Examine sex vs.
 #' specific category in the dataset in either bar plot or density plot.
 #'
-#' @param filepath A character string of the filepath to find your dataset.
-#' @param fpName A character string of CSV dataset's name. Recommand use
-#'    underscore instead of space.
-#' @param sexTag A character string of sex column title in the dataset provided.
+#' @param dataList A list of 3 dataframes created by separateCSV.
 #' @param yTag A character string of target category title in the dataset
 #'    provided.
-#' @param femaleTag A character string that represents "Female" in the dataset
-#'    (e.g., "F", "Female", "FEMALE", etc).
-#' @param maleTag A character string that represents "Male" in the dataset
-#'    (e.g., "M", "Male", "MALE", etc).
 #' @param visMethod A method for visualization. Current options are "bar" or
 #'    "density".
 #'

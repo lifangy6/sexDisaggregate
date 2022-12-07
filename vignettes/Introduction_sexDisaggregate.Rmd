@@ -40,13 +40,15 @@ set.seed(1) # for exact reproducibility
 
 **This document gives a tour of sexDisaggregate functionalities**. It was written in R Markdown, using the [knitr](https://cran.r-project.org/package=knitr) package for production. 
 
-See `help(package = "sexDisaggregate")` for further details and references provided by `citation("sexDisaggregate")`. To download **sexDisaggregate**, use the following commands:
+See `help(package = "sexDisaggregate")` for further details and references provided by `citation("sexDisaggregate")`. 
 
+To download **sexDisaggregate**, use the following commands:
 ``` r
 require("devtools")
 devtools::install_github("lifangy6/sexDisaggregate", build_vignettes = TRUE)
 library("sexDisaggregate")
 ```
+
 To list all functions available in the package:
 ``` r
 lsf.str("package:sexDisaggregate")
@@ -59,12 +61,58 @@ data(package = "sexDisaggregate")
 
 <br>
 
-## Details
+## Quick Tutorial
+Use provided example CSV data to do a quick tutorial about the functions in package.
 
-## Applications
+### Step 1. Separate example dataset
+To use the example CSV data:
+``` r
+exampleDataPath <- system.file("extdata", "example_data.csv", package = "sexDisaggregate")
+```
+
+To separate the example CSV data:
+``` r
+dataList <- sexDisaggregate::separateCSV(filepath = exampleDataPath, sexTag = "Sex", femaleTag = "F", maleTag = "M")
+dataList
+```
+
+To obtain three dataframes:
+``` r
+dataList$bothSex        # cleaned dataframe with both sexes and NA
+dataList$femaleOnly     # cleaned dataframe with female only
+dataList$maleOnly       # cleaned dataframe with male only
+```
+
+### Step 2.1: Bar plot approach
+To visualize Asthma vs. Sex: 
+``` r
+plots1 <- sexDisaggregate::visualizeDiff(dataList = dataList, yTag = "Asthma", visMethod = "bar")
+plots1
+```
+<div style="text-align:center"><img src="example_barplot.png" alt="ShinyLinePlot" width="750" height="650"/>
+
+### Step 2.2: Density plot approach
+To visualize Sodium Intake vs. Sex:
+``` r
+plots2 <- sexDisaggregate::visualizeDiff(dataList = dataList, yTag = "Sodium Intake (mg)", visMethod = "density")
+plots2
+```
+<div style="text-align:center"><img src="example_densityplot.png" alt="ShinyLinePlot" width="750" height="650"/>
+
+<br>
+
+## Shiny App
+To run the shinyApp:
+``` r
+sexDisaggregate::runSexDisaggregate()
+```
+
+<br>
 
 ## Package References
 Li, F. (2022) sexDisaggregate:To Obtain and Analyze Sex-disaggregated Datasets, Unpublished. URL https://github.com/lifangy6/sexDisaggregate
+
+<br>
 
 ## Other References
 * Claus O. Wilke (2017). cowplot: Streamlined Plot Theme and Plot Annotations 
@@ -83,6 +131,8 @@ R Foundation for Statistical Computing, Vienna, Austria. https://www.R-project.o
 Springer-Verlag New York. ISBN 978-3-319-24277-4, https://ggplot2.tidyverse.org.
   
 * Silva, Anjali. “Anjalisilva/TestingPackage: A Simple R Package Illustrating Components of an R Package: 2019-2022 BCB410H - Applied Bioinformatics, University of Toronto, Canada.” GitHub, https://github.com/anjalisilva/TestingPackage.
+
+<br>
 
 ```{r}
 sessionInfo()
