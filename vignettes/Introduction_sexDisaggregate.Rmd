@@ -1,5 +1,5 @@
 ---
-title: "Introduction_sexDisaggregate"
+title: "A tour of sexDisaggregate"
 author: "Fangyi Li"
 date: "`r format(Sys.time(), '%d %b %Y')`"
 output: rmarkdown::html_vignette
@@ -19,11 +19,71 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(sexDisaggregate)
 ```
+```{r, include=FALSE}
+library(knitr)
+opts_chunk$set(fig.align = "center", 
+               out.width = "90%",
+               fig.width = 6, fig.height = 5.5,
+               dev.args=list(pointsize=10),
+               par = TRUE, # needed for setting hook 
+               collapse = TRUE, # collapse input & ouput code in chunks
+               warning = FALSE)
+knit_hooks$set(par = function(before, options, envir)
+  { if(before && options$fig.show != "none") 
+       par(family = "sans", mar=c(4.1,4.1,1.1,1.1), mgp=c(3,1,0), tcl=-0.5)
+})
+set.seed(1) # for exact reproducibility
+```
 
 ## Introduction
+**sexDisaggregate** is a simple R package for separating CSV datasets by sex and performing analysis with respect to different sex groups. Function __*separateCSV*__ separates provided CSV file into 3 new datasets: a cleaned dataframe, a female-only dataframe and a male-only dataframe. Function __*visualizeDiff*__ visualizes 4 graphs that show sex percentage and sex vs. specific category in the dataset.
+
+**This document gives a tour of sexDisaggregate functionalities**. It was written in R Markdown, using the [knitr](https://cran.r-project.org/package=knitr) package for production. 
+
+See `help(package = "sexDisaggregate")` for further details and references provided by `citation("sexDisaggregate")`. To download **sexDisaggregate**, use the following commands:
+
+``` r
+require("devtools")
+devtools::install_github("lifangy6/sexDisaggregate", build_vignettes = TRUE)
+library("sexDisaggregate")
+```
+To list all functions available in the package:
+``` r
+lsf.str("package:sexDisaggregate")
+```
+
+To list all sample data available in the package:
+``` r
+data(package = "sexDisaggregate")
+```
+
+<br>
 
 ## Details
 
 ## Applications
 
-## References
+## Package References
+Li, F. (2022) sexDisaggregate:To Obtain and Analyze Sex-disaggregated Datasets, Unpublished. URL https://github.com/lifangy6/sexDisaggregate
+
+## Other References
+* Claus O. Wilke (2017). cowplot: Streamlined Plot Theme and Plot Annotations 
+for 'ggplot2'. https://github.com/wilkelab/cowplot.
+
+* Heinemann, A., Martinez, V. M., &amp; Alas, C. R. (n.d.). Why we need more 
+sex-disaggregated Social Protection Data and what we're doing to get there. 
+World Bank Blogs. Retrieved November 14, 2022, from https://blogs.worldbank.org/opendata/why-we-need-more-sex-disaggregated-social-protection-data-and-what-were-doing-get-there 
+
+* R Core Team (2022). R: A language and environment for statistical computing. 
+R Foundation for Statistical Computing, Vienna, Austria. https://www.R-project.org/.
+
+* Wickham, H. and Bryan, J. (2019). R Packages (2nd edition). Newton, Massachusetts: O’Reilly Media. https://r-pkgs.org/
+
+* Wickham H (2016). ggplot2: Elegant Graphics for Data Analysis. 
+Springer-Verlag New York. ISBN 978-3-319-24277-4, https://ggplot2.tidyverse.org.
+  
+* Silva, Anjali. “Anjalisilva/TestingPackage: A Simple R Package Illustrating Components of an R Package: 2019-2022 BCB410H - Applied Bioinformatics, University of Toronto, Canada.” GitHub, https://github.com/anjalisilva/TestingPackage.
+
+```{r}
+sessionInfo()
+```
