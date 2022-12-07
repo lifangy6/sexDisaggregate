@@ -3,9 +3,8 @@
 
 # sexDisaggregate
 
-<!-- badges: start -->
+To Obtain and Analyze Sex-disaggregated Datasets <!-- badges: start -->
 <!-- https://www.codefactor.io/repository/github/lifangy6/sexDisaggregate/issues -->
-
 [![GitHub
 issues](https://img.shields.io/github/issues/lifangy6/sexDisaggregate)](https://github.com/lifangy6/sexDisaggregate/issues)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
@@ -13,8 +12,7 @@ issues](https://img.shields.io/github/issues/lifangy6/sexDisaggregate)](https://
 count](https://img.shields.io/github/languages/count/lifangy6/sexDisaggregate)
 ![GitHub commit activity
 (branch)](https://img.shields.io/github/commit-activity/y/lifangy6/sexDisaggregate/master)
-<!-- https://shields.io/category/license --> <!-- badges: end --> To
-Obtain and Analyze Sex-disaggregated Datasets
+<!-- https://shields.io/category/license --> <!-- badges: end -->
 
 ## Description
 
