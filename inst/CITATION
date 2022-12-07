@@ -1,4 +1,4 @@
-decitHeader("To cite sexDisaggregate in publications use:")
+citHeader("To cite sexDisaggregate in publications use:")
 
 citEntry(
   entry    = "Unpublished",
@@ -7,7 +7,7 @@ citEntry(
   note     = "Unpublished",
   year     = "2020",
   url      = "https://github.com/lifangy6/sexDisaggregate",
-  textVersion = paste("Li, F. (2022) sexDisaggregate:To Obtain and Analyze Sex-disaggregated Datasets, Unpublished. URL https://github.com/lifangy6/sexDisaggregate"
 
-  )
+  textVersion =
+  paste("Li, F. (2022) sexDisaggregate:To Obtain and Analyze Sex-disaggregated Datasets,            Unpublished. URL https://github.com/lifangy6/sexDisaggregate")
 )
