@@ -128,9 +128,7 @@ to those who provided feedback to improve this package.
 
 ## Examples
 
-There is an example dataset `example_data.csv` under `/data` directory.
-
-**Example 1: Separate example dataset**
+**Step 1. Separate example dataset**
 
 ``` r
 exampleDataPath <- system.file("extdata", "example_data.csv", package = "sexDisaggregate")
@@ -138,10 +136,10 @@ dataList <- sexDisaggregate::separateCSV(filepath = exampleDataPath, sexTag = "S
 dataList
 ```
 
-**Example 2: Bar plot approach**
+**Step 2.1: Bar plot approach**
 
 ``` r
-plots1 <- visualizeDiff(dataList = myList, yTag = "Sodium Intake (mg)", visMethod = "density")
+plots1 <- visualizeDiff(dataList = dataList, yTag = "Sodium Intake (mg)", visMethod = "density")
 plots1
 ```
 
@@ -149,10 +147,10 @@ plots1
 
 <img src="inst/extdata/example_barplot.png" alt="ShinyLinePlot" width="750" height="650"/>
 
-**Example 3: Density plot approach**
+**Step 2.2: Density plot approach**
 
 ``` r
-plots2 <- visualizeDiff(dataList = myList, yTag = "Sodium Intake (mg)", visMethod = "density")
+plots2 <- visualizeDiff(dataList = dataList, yTag = "Sodium Intake (mg)", visMethod = "density")
 plots2
 ```
 
