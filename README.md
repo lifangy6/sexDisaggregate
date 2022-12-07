@@ -5,6 +5,7 @@
 
 To Obtain and Analyze Sex-disaggregated Datasets <!-- badges: start -->
 <!-- https://www.codefactor.io/repository/github/lifangy6/sexDisaggregate/issues -->
+[![CodeFactor](https://www.codefactor.io/repository/github/lifangy6/sexDisaggregate/badge)](https://www.codefactor.io/repository/github/lifangy6/sexDisaggregate)
 [![GitHub
 issues](https://img.shields.io/github/issues/lifangy6/sexDisaggregate)](https://github.com/lifangy6/sexDisaggregate/issues)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
