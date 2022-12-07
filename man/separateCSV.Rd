@@ -4,13 +4,10 @@
 \alias{separateCSV}
 \title{Separating CSV Dataset Into Three Groups}
 \usage{
-separateCSV(filepath, fpName, sexTag, femaleTag, maleTag)
+separateCSV(filepath, sexTag, femaleTag, maleTag)
 }
 \arguments{
-\item{filepath}{A character string of the filepath to find your dataset.}
-
-\item{fpName}{A character string of CSV dataset's name. Recommand use
-underscore instead of space.}
+\item{filepath}{A character string of the filepath to find your dataset..}
 
 \item{sexTag}{A character string of sex column title in the dataset provided.}
 
@@ -21,22 +18,28 @@ underscore instead of space.}
 (e.g., "M", "Male", "MALE", etc).}
 }
 \value{
-Returns three versions of cleaned datasets under /data directory:
+Returns three versions of cleaned datasets as dataframes in a list:
 (1) Cleaned version of original dataset (sex is "Female", "Male" or "NA")
 (2) Female-only dataset
 (3) Male-only dataset
 }
 \description{
 Check each entry of the dataset, clean unformated sex entry to standardized
-"Female"/"Male"/"NA", and output 3 cleanned versions of datasets into data/
-directory.
+"Female"/"Male"/"NA", and returns 3 cleanned versions of datasets as a list.
 }
 \examples{
-sexDisaggregate::separateCSV(filepath = "data/example_data.csv",
-                               fpName = "my_data",
+\dontrun{
+
+exampleDataPath <- system.file("extdata",
+                               "example_data.csv",
+                               package = "sexDisaggregate")
+
+dataList <- sexDisaggregate::separateCSV(filepath = exampleDataPath,
                                sexTag = "Sex",
                                femaleTag = "F",
                                maleTag = "M")
+
+}
 
 }
 \references{

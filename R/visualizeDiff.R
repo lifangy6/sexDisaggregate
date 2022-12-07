@@ -23,21 +23,28 @@
 #'    (D) Overall Distribution by Sex
 #'
 #' @examples
-#' # Example 1: Target category is not a continuous and numeric value.
-#' sexDisaggregate::visualizeDiff(filepath = "data/example_data.csv",
+#' \dontrun{
+#'
+#' # Data preparation
+#' exampleDataPath <- system.file("extdata",
+#'                                "example_data.csv",
+#'                                package = "sexDisaggregate")
+#'
+#' dataList <- sexDisaggregate::separateCSV(filepath = exampleDataPath,
 #'                                sexTag = "Sex",
-#'                                yTag = "Asthma",
 #'                                femaleTag = "F",
-#'                                maleTag = "M",
+#'                                maleTag = "M")
+#'
+#' # Example 1: Target category is not a continuous and numeric value.
+#' sexDisaggregate::visualizeDiff(dataList = dataList,
+#'                                yTag = "Asthma",
 #'                                visMethod = "bar")
 #'
 #' # Example 2: Target category is a continuous and numeric value.
-#' sexDisaggregate::visualizeDiff(filepath = "data/example_data.csv",
-#'                                sexTag = "Sex",
+#' sexDisaggregate::visualizeDiff(dataList = dataList,
 #'                                yTag = "Sodium Intake (mg)",
-#'                                femaleTag = "F",
-#'                                maleTag = "M",
 #'                                visMethod = "density")
+#' }
 #'
 #' @author {Fangyi Li, \email{fangyi.li@mail.utoronto.ca}}
 #'
@@ -58,57 +65,34 @@
 #' @import ggplot2
 #' @import cowplot
 #'
-visualizeDiff <- function(filepath,
-                          sexTag,
+visualizeDiff <- function(dataList,
                           yTag,
-                          femaleTag,
-                          maleTag,
                           visMethod) {
   # Input checks
-  if (is.character(filepath) & is.character(sexTag) &
-      is.character(yTag) & is.character(femaleTag) &
-      is.character(maleTag) & is.character(visMethod)) {
+  if (! is.list(dataList)) {
+    stop("Make sure dataList is a list of three separated datasets (use separateCSV function).")
+  }
+
+  if (is.character(sexTag) & is.character(visMethod)) {
     # pass
   } else {
-    stop("Make sure all input should be character string value.")
+    stop("Make sure sexTag and visMethod are character string value.")
   }
 
   if (visMethod != "bar" & visMethod != "density") {
-    stop('Invalid visMethod (can only be "bar" or "density".')
+    stop('Invalid visMethod (can only be "bar" or "density").')
   }
 
-  # Read CSV file
-  myCSV <- read.csv(file = filepath, header = T, check.names = FALSE)
-
-  # Separate into three groups
-  bothSex <- myCSV
-  femaleOnly <- subset(myCSV, myCSV[[sexTag]] == femaleTag)
-  maleOnly <- subset(myCSV, myCSV[[sexTag]] == maleTag)
+  # Get dataframes from list
+  bothSex <- dataList[[1]]
+  femaleOnly <- dataList[[2]]
+  maleOnly <- dataList[[3]]
 
   # Get # of each group
-  nTotal <- nrow(myCSV)
+  nTotal <- nrow(bothSex)
   nFemale <- nrow(femaleOnly)
   nMale <- nrow(maleOnly)
   nElse <- (nTotal - nFemale - nMale)
-
-  # Clean sex tags in dataset
-  for (i in 1:nFemale) {
-    femaleOnly[[sexTag]][i] <- "Female"
-  }
-
-  for (i in 1:nMale) {
-    maleOnly[[sexTag]][i] <- "Male"
-  }
-
-  for (i in 1:nTotal) {
-    if (bothSex[[sexTag]][i] == femaleTag) {
-      bothSex[[sexTag]][i] <- "Female"
-    } else if (bothSex[[sexTag]][i] == maleTag) {
-      bothSex[[sexTag]][i] <- "Male"
-    } else {
-      bothSex[[sexTag]][i] <- "NA"
-    }
-  }
 
   # Draw percentage graphs
   femaleC <- "#F5B7B1"
@@ -173,7 +157,7 @@ visualizeDiff <- function(filepath,
       ggplot2::geom_vline(aes(xintercept=mean(.data[[yTag]], na.rm=T)),
                           color="red",
                           linetype="dashed",
-                          size=1) +
+                          linewidth=1) +
       ggplot2::ggtitle("General Overall Distribution")
 
     # 4.2 Separate distribution
@@ -192,15 +176,21 @@ visualizeDiff <- function(filepath,
                           aes(xintercept=groupMean),
                           color=colorSet,
                           linetype="dashed",
-                          size=1,
+                          linewidth=1,
                           show.legend = F) +
       ggplot2::ggtitle("Overall Distribution by Sex")
   }
 
-  # Draw them out
-  cowplot::plot_grid(g1, g2, g3, g4, labels = c("A", "B", "C", "D"))
+  # Combine plots
+  plots <- cowplot::plot_grid(g1, g2, g3, g4, labels = c("A", "B", "C", "D"))
+
+  return(plots)
 }
 
 
 
 # [END]
+# myplots <- visualizeDiff(dataList = myList, yTag = "Sodium Intake (mg)", visMethod = "density")
+# myplots2 <- visualizeDiff(dataList = myList, yTag = "Asthma", visMethod = "bar")
+# myplots
+# myplots2

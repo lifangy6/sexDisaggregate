@@ -1,29 +1,33 @@
 #' Separating CSV Dataset Into Three Groups
 #'
 #' Check each entry of the dataset, clean unformated sex entry to standardized
-#' "Female"/"Male"/"NA", and output 3 cleanned versions of datasets into data/
-#' directory.
+#' "Female"/"Male"/"NA", and returns 3 cleanned versions of datasets as a list.
 #'
-#' @param filepath A character string of the filepath to find your dataset.
-#' @param fpName A character string of CSV dataset's name. Recommand use
-#'    underscore instead of space.
+#' @param filepath A character string of the filepath to find your dataset..
 #' @param sexTag A character string of sex column title in the dataset provided.
 #' @param femaleTag A character string that represents "Female" in the dataset
 #'    (e.g., "F", "Female", "FEMALE", etc).
 #' @param maleTag A character string that represents "Male" in the dataset
 #'    (e.g., "M", "Male", "MALE", etc).
 #'
-#' @return Returns three versions of cleaned datasets under /data directory:
+#' @return Returns three versions of cleaned datasets as dataframes in a list:
 #'    (1) Cleaned version of original dataset (sex is "Female", "Male" or "NA")
 #'    (2) Female-only dataset
 #'    (3) Male-only dataset
 #'
 #' @examples
-#' sexDisaggregate::separateCSV(filepath = "data/example_data.csv",
-#'                                fpName = "my_data",
+#' \dontrun{
+#'
+#' exampleDataPath <- system.file("extdata",
+#'                                "example_data.csv",
+#'                                package = "sexDisaggregate")
+#'
+#' dataList <- sexDisaggregate::separateCSV(filepath = exampleDataPath,
 #'                                sexTag = "Sex",
 #'                                femaleTag = "F",
 #'                                maleTag = "M")
+#'
+#' }
 #'
 #' @author {Fangyi Li, \email{fangyi.li@mail.utoronto.ca}}
 #'
@@ -35,16 +39,17 @@
 #' @export
 #'
 separateCSV <- function(filepath,
-                        fpName,
                         sexTag,
                         femaleTag,
                         maleTag) {
   # Input checks
-  if (is.character(filepath) & is.character(fpName) & is.character(sexTag)
-      & is.character(femaleTag) & is.character(maleTag)) {
+  if (is.character(filepath) &
+      is.character(sexTag) &
+      is.character(femaleTag) &
+      is.character(maleTag)) {
     # pass
   } else {
-    stop("Make sure all input should be character string value.")
+    stop("Make sure all inputs are character string values.")
   }
 
   # Read CSV file
@@ -80,16 +85,22 @@ separateCSV <- function(filepath,
     }
   }
 
-  # Output CSV into /data directory
-  femalePath <- paste("data/", fpName, "_female_only.csv", sep="")
-  malePath <- paste("data/", fpName, "_male_only.csv", sep="")
-  cleanedPath <- paste("data/", fpName, "_cleaned.csv", sep="")
-
-  write.csv(femaleOnly, femalePath, row.names = FALSE)
-  write.csv(maleOnly, malePath, row.names = FALSE)
-  write.csv(bothSex, cleanedPath, row.names = FALSE)
+  return(list("bothSex" = bothSex,
+              "femaleOnly" = femaleOnly,
+              "maleOnly" = maleOnly))
 }
 
 
 
 # [END]
+
+
+#
+# filepath <- "data/example_data.csv"
+# sexTag <- "Sex"
+# femaleTag <- "F"
+# maleTag <- "M"
+#
+# myList <- separateCSV(filepath = "data/example_data.csv",
+#             sexTag = "Sex", femaleTag = "F", maleTag = "M")
+

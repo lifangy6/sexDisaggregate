@@ -4,27 +4,27 @@
 \alias{visualizeDiff}
 \title{Visualizing Sex vs. Target Category}
 \usage{
-visualizeDiff(filepath, sexTag, yTag, femaleTag, maleTag, visMethod)
+visualizeDiff(dataList, yTag, visMethod)
 }
 \arguments{
-\item{filepath}{A character string of the filepath to find your dataset.}
-
-\item{sexTag}{A character string of sex column title in the dataset provided.}
-
 \item{yTag}{A character string of target category title in the dataset
 provided.}
+
+\item{visMethod}{A method for visualization. Current options are "bar" or
+"density".}
+
+\item{filepath}{A character string of the filepath to find your dataset.}
+
+\item{fpName}{A character string of CSV dataset's name. Recommand use
+underscore instead of space.}
+
+\item{sexTag}{A character string of sex column title in the dataset provided.}
 
 \item{femaleTag}{A character string that represents "Female" in the dataset
 (e.g., "F", "Female", "FEMALE", etc).}
 
 \item{maleTag}{A character string that represents "Male" in the dataset
 (e.g., "M", "Male", "MALE", etc).}
-
-\item{visMethod}{A method for visualization. Current options are "bar" or
-"density".}
-
-\item{fpName}{A character string of CSV dataset's name. Recommand use
-underscore instead of space.}
 }
 \value{
 Returns a combined figure of
@@ -38,21 +38,28 @@ Examine the sex percentage of the dataset in pie charts. Examine sex vs.
 specific category in the dataset in either bar plot or density plot.
 }
 \examples{
-# Example 1: Target category is not a continuous and numeric value.
-sexDisaggregate::visualizeDiff(filepath = "data/example_data.csv",
+\dontrun{
+
+# Data preparation
+exampleDataPath <- system.file("extdata",
+                               "example_data.csv",
+                               package = "sexDisaggregate")
+
+dataList <- sexDisaggregate::separateCSV(filepath = exampleDataPath,
                                sexTag = "Sex",
-                               yTag = "Asthma",
                                femaleTag = "F",
-                               maleTag = "M",
+                               maleTag = "M")
+
+# Example 1: Target category is not a continuous and numeric value.
+sexDisaggregate::visualizeDiff(dataList = dataList,
+                               yTag = "Asthma",
                                visMethod = "bar")
 
 # Example 2: Target category is a continuous and numeric value.
-sexDisaggregate::visualizeDiff(filepath = "data/example_data.csv",
-                               sexTag = "Sex",
+sexDisaggregate::visualizeDiff(dataList = dataList,
                                yTag = "Sodium Intake (mg)",
-                               femaleTag = "F",
-                               maleTag = "M",
                                visMethod = "density")
+}
 
 }
 \references{
