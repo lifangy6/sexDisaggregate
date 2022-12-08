@@ -2,42 +2,55 @@
 # library(sexDisaggregate)
 
 test_that("Error upon invalid user input", {
+  # Initialize
+  testData <- system.file("extdata", "example_data.csv", package = "sexDisaggregate")
 
-  # Non-character input
-  expect_error(separateCSV(filepath = 0,
-                           fpName = "my_data",
+  # Input errors
+  expect_error(separateCSV(filepath = testData,
                            sexTag = "Sex",
-                           femaleTag = "F",
+                           femaleTag = F,
                            maleTag = "M"))
 
-  expect_error(separateCSV(filepath = "data/example_data.csv",
-                           fpName = 1,
-                           sexTag = "Sex",
-                           femaleTag = "F",
-                           maleTag = "M"))
-
-  expect_error(separateCSV(filepath = "data/example_data.csv",
-                           fpName = "my_data",
-                           sexTag = -1,
-                           femaleTag = "F",
-                           maleTag = "M"))
-
-  expect_error(separateCSV(filepath = "data/example_data.csv",
-                           fpName = "my_data",
+  expect_error(separateCSV(filepath = testData,
                            sexTag = "Sex",
                            femaleTag = "F",
                            maleTag = 63.5))
 
-  expect_error(separateCSV(filepath = "data/example_data.csv",
-                           fpName = "my_data",
-                           sexTag = "Sex",
-                           femaleTag = FALSE,
-                           maleTag = "M"))
-
-  expect_error(separateCSV(filepath = NA,
-                           fpName = "my_data",
+  expect_error(separateCSV(filepath = inst/extdata/example_data.csv,
                            sexTag = "Sex",
                            femaleTag = "F",
                            maleTag = "M"))
 
+  expect_error(separateCSV(filepath = NA,
+                           sexTag = "Sex",
+                           femaleTag = "F",
+                           maleTag = "M"))
+
+  expect_error(separateCSV(filepath = testData,
+                           sexTag = "Sex",
+                           femaleTag = "F",
+                           maleTag = -1))
+
+  expect_error(separateCSV(filepath = testData,
+                           sexTag = TRUE,
+                           femaleTag = "F",
+                           maleTag = "M"))
 })
+
+test_that("Error upon false output", {
+  # Initialize
+  testData <- system.file("extdata", "example_data.csv", package = "sexDisaggregate")
+  controlList <- read.csv(testData)
+  testList <- separateCSV(testData, "Sex", "F", "M")
+
+  # Output list names
+  expect_equal(names(testList), c("bothSex", "femaleOnly", "maleOnly"))
+
+  # Check if any lost during processing
+  expect_equal(nrow(controlList), nrow(testList$bothSex))
+
+})
+
+
+
+# [END]

@@ -31,7 +31,15 @@ devtools::install_github("lifangy6/sexDisaggregate", build_vignettes = TRUE)
 library("sexDisaggregate")
 ```
 
+To run the shinyApp:
+
+``` r
+sexDisaggregate::runSexDisaggregate()
+```
+
 ## Overview
+
+To have a glance of the package:
 
 ``` r
 ls("package:sexDisaggregate")
@@ -39,30 +47,36 @@ data(package = "sexDisaggregate")
 browseVignettes("sexDisaggregate")
 ```
 
-<br> `sexDisaggregate` contains 2 functions:
+`sexDisaggregate` contains 2 functions:
 
-Function `separateCSV` separates provided CSV file into 3 new datasets:
-cleaned version, female-only and male-only.
+Function `separateCSV` separates provided CSV file into 3 new versions:
+cleaned both-sex dataframe, female-only dataframe and male-only
+dataframe.
 
 Function `visualizeDiff` visualize 4 graphs that show sex percentage and
-sex vs. specific category in the dataset.
+specific category vs. sex in the dataset.
 
 <div style="text-align:center">
 
 <img src="inst/extdata/Overview.jpg" alt="OverviewPlot" width="750" height="650"/>
 
-<br> To run the shinyApp:
-
-``` r
-sexDisaggregate::runSexDisaggregate()
-```
-
 ## Contributions
 
-The author of the package is Fangyi Li. Packages `ggplot2` and `cowplot`
-are used to help visualizing and outputing data.
+The author of the package is Fangyi Li.
+
+- Package `ggplot2` is used to create plots in function `visualizeDiff`.
+
+- Package `cowplot` is used to comnine plots in function
+  `visualizeDiff`.
+
+- Package `shiny` is used to develop shinyApp of the package.
 
 ## References
+
+- Chang W, Cheng J, Allaire J, Sievert C, Schloerke B, Xie Y, Allen J,
+  McPherson J, ipert A, Borges B (2022). shiny: Web Application
+  Framework for R. R package version 1.7.3,
+  <https://CRAN.R-project.org/package=shiny>.
 
 - Claus O. Wilke (2017). cowplot: Streamlined Plot Theme and Plot
   Annotations for ‘ggplot2’. <https://github.com/wilkelab/cowplot>.
@@ -131,7 +145,7 @@ to those who provided feedback to improve this package.
       |- test-visualizeDiff.R
 ```
 
-## Examples
+## Quick Tutorial
 
 **Step 1. Separate example dataset**
 

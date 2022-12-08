@@ -106,6 +106,7 @@ To run the shinyApp:
 ``` r
 sexDisaggregate::runSexDisaggregate()
 ```
+<div style="text-align:center"><img src="shiny_example.png" alt="ShinyLinePlot" width="750" height="650"/>
 
 <br>
 
@@ -115,6 +116,8 @@ Li, F. (2022) sexDisaggregate:To Obtain and Analyze Sex-disaggregated Datasets, 
 <br>
 
 ## Other References
+* Chang W, Cheng J, Allaire J, Sievert C, Schloerke B, Xie Y, Allen J, McPherson J, ipert A, Borges B (2022). shiny: Web Application Framework for R. R package version 1.7.3, https://CRAN.R-project.org/package=shiny.
+
 * Claus O. Wilke (2017). cowplot: Streamlined Plot Theme and Plot Annotations 
 for 'ggplot2'. https://github.com/wilkelab/cowplot.
 

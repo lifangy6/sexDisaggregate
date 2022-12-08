@@ -23,7 +23,6 @@
 #'
 #' @importFrom shiny runApp
 runSexDisaggregate <- function() {
-
   appDir <- system.file("shiny-scripts",
                         package = "sexDisaggregate")
   actionShiny <- shiny::runApp(appDir, display.mode = "normal")
