@@ -49,7 +49,7 @@ sex vs. specific category in the dataset.
 
 <div style="text-align:center">
 
-<img src="inst/extdata/Overview.pdf" alt="OverviewPlot"  width="750" height="650">
+<img src="inst/extdata/Overview.jpg" alt="OverviewPlot" width="750" height="650"/>
 
 <br> To run the shinyApp:
 
