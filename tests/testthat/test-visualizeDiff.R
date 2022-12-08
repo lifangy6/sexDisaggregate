@@ -8,12 +8,12 @@ test_that("Error upon invalid user input", {
   # Unexpected dataList
   expect_error(visualizeDiff(dataList = list(1, 2, 3),
                              yTag = "Asthma",
-                             visMethod = "bar"))
+                             visMethod = "Bar"))
 
   # Input errors (about character string)
   expect_error(visualizeDiff(dataList = testList,
                              yTag = 1,
-                             visMethod = "bar"))
+                             visMethod = "Bar"))
 
   expect_error(visualizeDiff(dataList = testList,
                              yTag = "Asthma",
@@ -25,13 +25,13 @@ test_that("Error upon invalid user input", {
 
   expect_error(visualizeDiff(dataList = testList,
                              yTag = -1,
-                             visMethod = "bar"))
+                             visMethod = "Bar"))
 
   expect_error(visualizeDiff(dataList = testList,
                              yTag = "Asthma",
                              visMethod = 0.63))
 
-  # Invalid visMethod input (can only be "bar" or "density")
+  # Invalid visMethod input (can only be "Bar" or "Density")
   expect_error(visualizeDiff(dataList = testList,
                              yTag = "Asthma",
                              visMethod = "whatttt"))
@@ -39,7 +39,7 @@ test_that("Error upon invalid user input", {
   # Invalid yTag (does not exist)
   expect_error(visualizeDiff(dataList = testList,
                              yTag = "doggie",
-                             visMethod = "bar"))
+                             visMethod = "Bar"))
 
 })
 

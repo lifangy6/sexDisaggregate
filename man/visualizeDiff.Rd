@@ -12,8 +12,8 @@ visualizeDiff(dataList, yTag, visMethod)
 \item{yTag}{A character string of target category title in the dataset
 provided.}
 
-\item{visMethod}{A method for visualization. Current options are "bar" or
-"density".}
+\item{visMethod}{A method for visualization. Current options are "Bar" or
+"Density".}
 }
 \value{
 Returns a combined figure of
@@ -42,12 +42,12 @@ dataList <- sexDisaggregate::separateCSV(filepath = exampleDataPath,
 # Example 1: Target category is not a continuous and numeric value.
 sexDisaggregate::visualizeDiff(dataList = dataList,
                                yTag = "Asthma",
-                               visMethod = "bar")
+                               visMethod = "Bar")
 
 # Example 2: Target category is a continuous and numeric value.
 sexDisaggregate::visualizeDiff(dataList = dataList,
                                yTag = "Sodium Intake (mg)",
-                               visMethod = "density")
+                               visMethod = "Density")
 }
 
 }

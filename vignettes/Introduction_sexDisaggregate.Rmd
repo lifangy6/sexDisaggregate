@@ -86,7 +86,7 @@ dataList$maleOnly       # cleaned dataframe with male only
 ### Step 2.1: Bar plot approach
 To visualize Asthma vs. Sex: 
 ``` r
-plots1 <- sexDisaggregate::visualizeDiff(dataList = dataList, yTag = "Asthma", visMethod = "bar")
+plots1 <- sexDisaggregate::visualizeDiff(dataList = dataList, yTag = "Asthma", visMethod = "Bar")
 plots1
 ```
 <div style="text-align:center"><img src="example_barplot.png" alt="ShinyLinePlot" width="750" height="650"/>
@@ -94,7 +94,7 @@ plots1
 ### Step 2.2: Density plot approach
 To visualize Sodium Intake vs. Sex:
 ``` r
-plots2 <- sexDisaggregate::visualizeDiff(dataList = dataList, yTag = "Sodium Intake (mg)", visMethod = "density")
+plots2 <- sexDisaggregate::visualizeDiff(dataList = dataList, yTag = "Sodium Intake (mg)", visMethod = "Density")
 plots2
 ```
 <div style="text-align:center"><img src="example_densityplot.png" alt="ShinyLinePlot" width="750" height="650"/>

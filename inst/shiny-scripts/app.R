@@ -33,8 +33,7 @@ ui <- fluidPage(
 
       # input
       tags$p("Instructions: Below, enter or select values required to perform the analysis. Default
-               values are shown. Then press 'Run'. Navigate through
-               the different tabs to the right to explore the results."),
+               values are shown. Then press 'Run'. Navigate the right to explore the results."),
 
       # br() element to introduce extra vertical spacing ----
       br(),
@@ -44,7 +43,7 @@ ui <- fluidPage(
 
       uiOutput("tab1"),
       actionButton(inputId = "data1",
-                   label = "Dataset 1 Details"),
+                   label = "Example Dataset Details"),
       fileInput(inputId = "file1",
                 label = "Select a sex-embeded dataset to visualize. File should be in .csv format with a columns of sex.",
                 accept = c(".csv")),
@@ -57,7 +56,7 @@ ui <- fluidPage(
       textInput(inputId = "yTag",
                 label = "Enter the exact representation of desired analyzing category in the dataset (eg. Asthma, Sodium Intake (mg), etc).", "Asthma"),
       selectInput("visMethod", "Choose a visualize method:",
-                  choices = c("bar", "density")),
+                  choices = c("Bar", "Density")),
 
       # br() element to introduce extra vertical spacing ----
       br(),
@@ -115,7 +114,7 @@ server <- function(input, output) {
   observeEvent(input$data1, {
     # Show a modal when the button is pressed
     shinyalert(title = "Example Dataset",
-               text = "This is a provided example dataset.",
+               text = "This example dataset has 30 entries with columns of Year, Sex, Sodium Intake (mg), Number_of_vaccination and Asthma. Download and open it to have a better understanding of the dataset.",
                type = "info")
   })
 

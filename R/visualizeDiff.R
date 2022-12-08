@@ -6,8 +6,8 @@
 #' @param dataList A list of 3 dataframes created by separateCSV.
 #' @param yTag A character string of target category title in the dataset
 #'    provided.
-#' @param visMethod A method for visualization. Current options are "bar" or
-#'    "density".
+#' @param visMethod A method for visualization. Current options are "Bar" or
+#'    "Density".
 #'
 #' @return Returns a combined figure of
 #'    (A) Overall Percentage (without Unspecified Sex)
@@ -31,12 +31,12 @@
 #' # Example 1: Target category is not a continuous and numeric value.
 #' sexDisaggregate::visualizeDiff(dataList = dataList,
 #'                                yTag = "Asthma",
-#'                                visMethod = "bar")
+#'                                visMethod = "Bar")
 #'
 #' # Example 2: Target category is a continuous and numeric value.
 #' sexDisaggregate::visualizeDiff(dataList = dataList,
 #'                                yTag = "Sodium Intake (mg)",
-#'                                visMethod = "density")
+#'                                visMethod = "Density")
 #' }
 #'
 #' @author {Fangyi Li, \email{fangyi.li@mail.utoronto.ca}}
@@ -72,8 +72,8 @@ visualizeDiff <- function(dataList,
     stop("Make sure yTag and visMethod are character string value.")
   }
 
-  if (visMethod != "bar" & visMethod != "density") {
-    stop('Invalid visMethod (can only be "bar" or "density").')
+  if (visMethod != "Bar" & visMethod != "Density") {
+    stop('Invalid visMethod (can only be "Bar" or "Density").')
   }
 
   # Get dataframes from list
@@ -123,7 +123,7 @@ visualizeDiff <- function(dataList,
 
   # Graph 3 & 4 (analyze target category)
 
-  if (visMethod == "bar") {
+  if (visMethod == "Bar") {
     # 3.1 Overall distribution
     counts3 <<- table(bothSex[[yTag]])
     g3 <- ~barplot(counts3,
@@ -140,7 +140,7 @@ visualizeDiff <- function(dataList,
                    legend = c("Female", "Male", "NA"),
                    beside=TRUE)
 
-  } else if (visMethod == "density") {
+  } else if (visMethod == "Density") {
     # 3.2 Overall distribution
     g3 <- ggplot2::ggplot(data=bothSex,
                           aes(x=.data[[yTag]])) +
