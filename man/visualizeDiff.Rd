@@ -7,24 +7,13 @@
 visualizeDiff(dataList, yTag, visMethod)
 }
 \arguments{
+\item{dataList}{A list of 3 dataframes created by separateCSV.}
+
 \item{yTag}{A character string of target category title in the dataset
 provided.}
 
 \item{visMethod}{A method for visualization. Current options are "bar" or
 "density".}
-
-\item{filepath}{A character string of the filepath to find your dataset.}
-
-\item{fpName}{A character string of CSV dataset's name. Recommand use
-underscore instead of space.}
-
-\item{sexTag}{A character string of sex column title in the dataset provided.}
-
-\item{femaleTag}{A character string that represents "Female" in the dataset
-(e.g., "F", "Female", "FEMALE", etc).}
-
-\item{maleTag}{A character string that represents "Male" in the dataset
-(e.g., "M", "Male", "MALE", etc).}
 }
 \value{
 Returns a combined figure of

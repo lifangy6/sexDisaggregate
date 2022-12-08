@@ -93,14 +93,3 @@ separateCSV <- function(filepath,
 
 
 # [END]
-
-
-#
-# filepath <- "data/example_data.csv"
-# sexTag <- "Sex"
-# femaleTag <- "F"
-# maleTag <- "M"
-#
-# myList <- separateCSV(filepath = "data/example_data.csv",
-#             sexTag = "Sex", femaleTag = "F", maleTag = "M")
-

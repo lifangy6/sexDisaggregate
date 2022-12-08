@@ -66,10 +66,10 @@ visualizeDiff <- function(dataList,
     stop("Make sure dataList is a list of three separated datasets (use separateCSV function).")
   }
 
-  if (is.character(sexTag) & is.character(visMethod)) {
+  if (is.character(yTag) & is.character(visMethod)) {
     # pass
   } else {
-    stop("Make sure sexTag and visMethod are character string value.")
+    stop("Make sure yTag and visMethod are character string value.")
   }
 
   if (visMethod != "bar" & visMethod != "density") {
@@ -132,7 +132,7 @@ visualizeDiff <- function(dataList,
 
 
     # 4.1 Separate distribution
-    counts4 <<- table(bothSex[[sexTag]], bothSex[[yTag]])
+    counts4 <<- table(bothSex$Sex, bothSex[[yTag]])
     g4 <- ~barplot(counts4,
                    main="Overall Distribution by Sex",
                    xlab=yTag,
@@ -156,7 +156,7 @@ visualizeDiff <- function(dataList,
     # 4.2 Separate distribution
     meanF <- mean(femaleOnly[[yTag]])
     meanM <- mean(maleOnly[[yTag]])
-    meanE <- mean(subset(bothSex, bothSex[[sexTag]] == "NA")[[yTag]])
+    meanE <- mean(subset(bothSex, bothSex$Sex == "NA")[[yTag]])
     meanLines <- data.frame(Sex = c("Female", "Male", "NA"),
                             groupMean = c(meanF, meanM, meanE))
 
@@ -183,7 +183,3 @@ visualizeDiff <- function(dataList,
 
 
 # [END]
-# myplots <- visualizeDiff(dataList = myList, yTag = "Sodium Intake (mg)", visMethod = "density")
-# myplots2 <- visualizeDiff(dataList = myList, yTag = "Asthma", visMethod = "bar")
-# myplots
-# myplots2
