@@ -49,7 +49,7 @@ sex vs. specific category in the dataset.
 
 <div style="text-align:center">
 
-<img src="inst/extdata/Overview.pdf" alt="ShinyLinePlot" width="750" height="650"/>
+<img src="inst/extdata/Overview.pdf" alt="OverviewPlot"  width="750" height="650">
 
 <br> To run the shinyApp:
 
@@ -150,7 +150,7 @@ plots1
 
 <div style="text-align:center">
 
-<img src="inst/extdata/example_barplot.png" alt="ShinyLinePlot" width="750" height="650"/>
+<img src="inst/extdata/example_barplot.png" alt="BarPlot" width="750" height="650"/>
 
 **Step 2.2: Density plot approach**
 
@@ -161,4 +161,4 @@ plots2
 
 <div style="text-align:center">
 
-<img src="inst/extdata/example_densityplot.png" alt="ShinyLinePlot" width="750" height="650"/>
+<img src="inst/extdata/example_densityplot.png" alt="DensityPlot" width="750" height="650"/>

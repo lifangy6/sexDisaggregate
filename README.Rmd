@@ -53,7 +53,7 @@ Function `separateCSV` separates provided CSV file into 3 new datasets: cleaned 
 
 Function `visualizeDiff` visualize 4 graphs that show sex percentage and sex vs. specific category in the dataset.
 
-<div style="text-align:center"><img src="inst/extdata/Overview.pdf" alt="ShinyLinePlot" width="750" height="650"/>
+<div style="text-align:center"><img src="inst/extdata/Overview.pdf" alt="OverviewPlot"  width="750" height="650">
 
 <br>
 To run the shinyApp:
@@ -137,13 +137,13 @@ dataList
 plots1 <- visualizeDiff(dataList = dataList, yTag = "Asthma", visMethod = "bar")
 plots1
 ```
-<div style="text-align:center"><img src="inst/extdata/example_barplot.png" alt="ShinyLinePlot" width="750" height="650"/>
+<div style="text-align:center"><img src="inst/extdata/example_barplot.png" alt="BarPlot" width="750" height="650"/>
 
 **Step 2.2: Density plot approach**
 ``` r
 plots2 <- visualizeDiff(dataList = dataList, yTag = "Sodium Intake (mg)", visMethod = "density")
 plots2
 ```
-<div style="text-align:center"><img src="inst/extdata/example_densityplot.png" alt="ShinyLinePlot" width="750" height="650"/>
+<div style="text-align:center"><img src="inst/extdata/example_densityplot.png" alt="DensityPlot" width="750" height="650"/>
 
 
