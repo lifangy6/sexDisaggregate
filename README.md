@@ -120,24 +120,28 @@ to those who provided feedback to improve this package.
   |- NAMESPACE
   |- LICENSE
   |- README
-  |- data
-    |- asthma_dataset.csv
-    |- example_data.csv
   |- inst
     CITATION
     |- extdata
+      |- example_data.csv
       |- example_barplot.png
       |- example_densityplot.png
+      |- Overview.jpg
     |- shiny-scripts
       |- app.R
   |- man
     |- separateCSV.Rd
     |- visualizeDiff.Rd
+    |- runSexDisaggregate.Rd
   |- R
     |- separateCSV.R
     |- visualizeDiff.R
+    |- runSexDisaggregate.R
   |- vignettes
     |- Introduction_sexDisaggregate.Rmd
+    |- example_barplot.png
+    |- example_densityplot.png
+    |- shiny_example.png
   |- tests
     |- testthat.R
     |- testthat

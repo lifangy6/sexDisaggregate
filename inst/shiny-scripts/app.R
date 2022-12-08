@@ -45,7 +45,7 @@ ui <- fluidPage(
       actionButton(inputId = "data1",
                    label = "Example Dataset Details"),
       fileInput(inputId = "file1",
-                label = "Select a sex-embeded dataset to visualize. File should be in .csv format with a columns of sex.",
+                label = "Select a sex-embeded dataset to visualize. File should be in .csv format with a sex column embeded.",
                 accept = c(".csv")),
       textInput(inputId = "sexTag",
                 label = "Enter the exact representation of the sex column (eg. Sex, sex, s, etc).", "Sex"),
