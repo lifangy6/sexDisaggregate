@@ -47,6 +47,10 @@ cleaned version, female-only and male-only.
 Function `visualizeDiff` visualize 4 graphs that show sex percentage and
 sex vs. specific category in the dataset.
 
+<div style="text-align:center">
+
+<img src="inst/extdata/Overview.pdf" alt="ShinyLinePlot" width="750" height="650"/>
+
 <br> To run the shinyApp:
 
 ``` r
